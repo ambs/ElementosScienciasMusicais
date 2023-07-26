@@ -6,7 +6,7 @@ use Path::Tiny;
 
 my $all = "";
 
-my @files = path(".")->children( qr/\d+\.md/ );
+my @files = path("pages")->children( qr/\d+\.md/ );
 foreach my $file (sort @files) {
     my $content = $file->slurp_utf8;
     unless ($all =~ s/\.\.\.\s*$/$content/) {
