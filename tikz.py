@@ -114,11 +114,11 @@ def tikz(key, value, format, meta):
            if 'label' in options:
              caption += "\\label{" + options['label'] + "}"
 
-           caption = "\n\\caption{" + caption + "}"
+           caption = "\n\\textit{" + caption + "}"
         if 'label' in options:
             code = "\\hypertarget{" + options['label'] + "}{" + code + "}"
 
-        code = "\\begin{figure}[h]\n\\centering\n" + code + caption + "\n\\end{figure}"
+        code = "\\vspace{5mm}\\begin{center}\n" + code + "\n\n" + caption + "\n\\end{center}\\vspace{5mm}\n"
         return latex(code)
 
 if __name__ == "__main__":
