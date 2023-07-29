@@ -12,7 +12,7 @@ local filetype = filetypes[FORMAT][1] or "png"
 local mimetype = filetypes[FORMAT][2] or "image/png"
 
 local function abc2eps(abc, filetype)
-    local eps = pandoc.pipe("abcm2ps", {"-q", "-O", "-", "-"}, abc)
+    local eps = pandoc.pipe("abcm2ps", { "-q", "-O", "-", "-"}, abc)
     local final
     if FORMAT == "latex" then
         local pdf = pandoc.pipe("epstopdf", {"--filter"}, eps)
